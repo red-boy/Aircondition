@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/air_background_fullscreen"
+    tools:context="com.example.cxy.aircondition.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/air_title_back">
+
+        <Button
+            android:id="@+id/on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@mipmap/air_on1"/>
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="空调"
+            android:textColor="@android:color/white"
+            android:textSize="28.0sp"/>
+
+        <Button
+            android:id="@+id/switchPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/m_back_swapposition_normal"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/turnOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/circleMode"
+        android:layout_marginLeft="15dp"
+        android:background="@mipmap/air_conditioner_off"/>
+
+    <Button
+        android:id="@+id/circleMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/air_recircle_in"/>
+
+    <Button
+        android:id="@+id/air_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/circleMode"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/air_back_off"/>
+
+    <Button
+        android:id="@+id/air_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/air_back"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/air_main_off"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/air_main"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/air_main">
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/air_main"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/air_main"
+                android:text="温度"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/lowTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="低"
+                android:textColor="@color/White"/>
+
+            <SeekBar
+                android:id="@+id/tempSeekbar"
+                android:layout_width="281.0dip"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/air_main"
+                android:layout_marginStart="1dp"
+                android:layout_toEndOf="@+id/lowTemp"
+                android:alpha="1.0"
+                android:max="14"
+                android:maxHeight="11.0dip"
+                android:minHeight="11.0dip"
+                android:paddingLeft="8.0dip"
+                android:paddingRight="8.0dip"
+                android:progress="5"
+                android:progressDrawable="@mipmap/air_tem_progress"
+                android:thumb="@mipmap/air_temforward_solid"/>
+
+            <TextView
+                android:id="@+id/highTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="高"
+                android:textColor="@color/White"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/air_main">
+
+            <TextView
+                android:id="@+id/textBefore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="前"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/imageViewSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@mipmap/air_windwhite_logosmall"/>
+
+            <SeekBar
+                android:id="@+id/airBeforeSeekbar"
+                android:layout_width="281.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:alpha="1.0"
+                android:max="14"
+                android:maxHeight="11.0dip"
+                android:minHeight="11.0dip"
+                android:paddingLeft="8.0dip"
+                android:paddingRight="8.0dip"
+                android:progress="5"
+                android:progressDrawable="@mipmap/air_dashline"
+                android:thumb="@mipmap/air_temforward_solid"/>
+
+            <ImageView
+                android:id="@+id/imageViewBig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:background="@mipmap/air_windwhite_logobig"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/air_main">
+
+            <TextView
+                android:id="@+id/textBehind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/air_wind_backbutton"/>
+
+            <ImageView
+                android:id="@+id/imageViewSmall2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:background="@mipmap/air_windwhite_logosmall"/>
+
+            <SeekBar
+                android:id="@+id/airBeforeSeekbar2"
+                android:layout_width="281.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:alpha="1.0"
+                android:max="14"
+                android:maxHeight="11.0dip"
+                android:minHeight="11.0dip"
+                android:paddingLeft="8.0dip"
+                android:paddingRight="8.0dip"
+                android:progress="5"
+                android:progressDrawable="@mipmap/air_dashline"
+                android:thumb="@mipmap/air_temforward_solid"/>
+
+            <ImageView
+                android:id="@+id/imageViewBig2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:background="@mipmap/air_windwhite_logobig"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/air_vice_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/air_back"
+        android:layout_margin="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/air_vice_off"/>
+
+
+</RelativeLayout>
